@@ -62,7 +62,7 @@ const data = {
       brand: 'Flu',
       image: '/images/p6.jpg',
       price: 150,
-      rating: 4.7,
+      rating: 3.5,
       numReviews: 20,
       description: 'Slim Fit formal Pants',
     },
