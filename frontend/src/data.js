@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      _id: 1,
+      _id: '1',
       name: 'Nike Slim Shirt',
       category: 'Shirts',
       brand: 'Nike',
@@ -10,9 +10,10 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       description: 'Slim Fit formal Shirt',
+      countInStock: 20,
     },
     {
-      _id: 2,
+      _id: '2',
       name: 'Levis Regular Shirt',
       category: 'Shirts',
       brand: 'Levis',
@@ -21,9 +22,10 @@ const data = {
       rating: 4.2,
       numReviews: 15,
       description: 'Regular formal Shirt',
+      countInStock: 11,
     },
     {
-      _id: 3,
+      _id: '3',
       name: 'Peter England Slim Shirt',
       category: 'Shirts',
       brand: 'Peter England',
@@ -32,9 +34,10 @@ const data = {
       rating: 4.7,
       numReviews: 20,
       description: 'Regular fit formal Shirt',
+      countInStock: 7,
     },
     {
-      _id: 4,
+      _id: '4',
       name: 'Levis Plain Pants',
       category: 'Pants',
       brand: 'Levis',
@@ -43,9 +46,10 @@ const data = {
       rating: 4,
       numReviews: 12,
       description: 'Slim Fit White Pants',
+      countInStock: 5,
     },
     {
-      _id: 5,
+      _id: '5',
       name: 'Pavilion Pants',
       category: 'Pants',
       brand: 'Pavilion',
@@ -54,9 +58,10 @@ const data = {
       rating: 4.1,
       numReviews: 10,
       description: 'Gray fit pants',
+      countInStock: 10,
     },
     {
-      _id: 6,
+      _id: '6',
       name: 'Flu Gray Pants',
       category: 'Shirts',
       brand: 'Flu',
@@ -65,6 +70,7 @@ const data = {
       rating: 3.5,
       numReviews: 20,
       description: 'Slim Fit formal Pants',
+      countInStock: 0,
     },
   ],
 }
