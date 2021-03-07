@@ -176,11 +176,37 @@ img.large {
   color: #404040;
 }
 
+/*Loading*/
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 3rem;
+  height: 100vh;
+}
+
 /*Alert*/
 .success {
   color: #20a020;
 }
 
-.error {
+.danger {
   color: #a02020;
+}
+
+.alert {
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+
+.alert-info {
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+
+.alert-danger {
+  color: #a02020;
+  background-color: #ffe0e0;
 }
