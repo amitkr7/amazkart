@@ -1,0 +1,23 @@
+{
+  "name": "amazkart",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitkr7/amazkart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitkr7/amazkart/issues"
+  },
+  "homepage": "https://github.com/amitkr7/amazkart#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
