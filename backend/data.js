@@ -17,7 +17,6 @@ const data = {
   ],
   products: [
     {
-      _id: '1',
       name: 'Nike Slim Shirt',
       category: 'Shirts',
       brand: 'Nike',
@@ -29,7 +28,6 @@ const data = {
       countInStock: 20,
     },
     {
-      _id: '2',
       name: 'Levis Regular Shirt',
       category: 'Shirts',
       brand: 'Levis',
@@ -41,7 +39,6 @@ const data = {
       countInStock: 11,
     },
     {
-      _id: '3',
       name: 'Peter England Slim Shirt',
       category: 'Shirts',
       brand: 'Peter England',
@@ -53,7 +50,6 @@ const data = {
       countInStock: 7,
     },
     {
-      _id: '4',
       name: 'Levis Plain Pants',
       category: 'Pants',
       brand: 'Levis',
@@ -65,7 +61,6 @@ const data = {
       countInStock: 5,
     },
     {
-      _id: '5',
       name: 'Pavilion Pants',
       category: 'Pants',
       brand: 'Pavilion',
@@ -77,7 +72,6 @@ const data = {
       countInStock: 10,
     },
     {
-      _id: '6',
       name: 'Flu Gray Pants',
       category: 'Shirts',
       brand: 'Flu',
