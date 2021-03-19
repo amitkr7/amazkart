@@ -37,4 +37,33 @@ userRouter.post(
   })
 )
 
+userRouter.post(
+  '/register',
+  expressAsyncHandler(async (req, res) => {
+    const { email } = req.body
+
+    const userExists = await User.findOne({ email })
+    if (userExists) {
+      res.status(400)
+      throw new Error('User Already Exists')
+    }
+
+    const user = new User({
+      name: req.body.name,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 8),
+    })
+
+    const createdUser = await user.save()
+
+    res.send({
+      _id: createdUser._id,
+      name: createdUser.name,
+      email: createdUser.email,
+      isAdmin: createdUser.admin,
+      token: generateToken(createdUser),
+    })
+  })
+)
+
 export default userRouter
