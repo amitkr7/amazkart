@@ -32,7 +32,7 @@ const ShippingScreen = (props) => {
   return (
     <div>
       <CheckoutSteps step1 step2 />
-      <form className='form' onSubmit={() => submitHandler()}>
+      <form className='form' onSubmit={submitHandler}>
         <div>
           <h1>Shipping Addess</h1>
         </div>

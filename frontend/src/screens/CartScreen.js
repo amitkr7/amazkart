@@ -63,6 +63,9 @@ const CartScreen = (props) => {
                     </select>
                   </div>
                   <div>
+                    ${item.qty} x ${item.price}= ${item.price * item.qty}
+                  </div>
+                  <div>
                     <button
                       type='button'
                       onClick={() => removeFromCartHandler(item.product)}>
