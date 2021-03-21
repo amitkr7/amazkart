@@ -1,13 +1,21 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { createOrder } from '../actions/orderActions'
 import CheckoutSteps from '../components/CheckoutSteps'
+import LoadingBox from '../components/LoadingBox'
+import MessageBox from '../components/MessageBox'
+import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 
 const PlaceOrderScreen = (props) => {
   const cart = useSelector((state) => state.cart)
   if (!cart.paymentMethod) {
     props.history.push('/payment')
   }
+
+  const orderCreate = useSelector((state) => state.orderCreate)
+  const { loading, success, error, order } = orderCreate
+
   const toPrice = (num) => Number(num.toFixed(2))
   cart.itemsPrice = toPrice(
     cart.cartItems.reduce((a, c) => a + c.qty * c.price, 0)
@@ -18,12 +26,22 @@ const PlaceOrderScreen = (props) => {
     cart.itemsPrice + cart.shippingPrice + cart.taxPrice
   )
 
+  const dispatch = useDispatch()
+
   function placeOrderHandler() {
-    console.log('hello')
+    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }))
   }
+
+  useEffect(() => {
+    if (success) {
+      props.history.push(`/order/${order._id}`)
+      dispatch({ type: ORDER_CREATE_RESET })
+    }
+  }, [dispatch, order, props.history, success])
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
+
       <div className='row top'>
         <div className='col-2'>
           <ul>
@@ -53,7 +71,7 @@ const PlaceOrderScreen = (props) => {
             <li>
               <div className='card card-body'>
                 <h2>Order Items</h2>
-                <p>
+                <ul>
                   {cart.cartItems.map((item) => (
                     <li key={item.product}>
                       <div className='row'>
@@ -75,7 +93,7 @@ const PlaceOrderScreen = (props) => {
                       </div>
                     </li>
                   ))}
-                </p>
+                </ul>
               </div>
             </li>
           </ul>
@@ -120,6 +138,8 @@ const PlaceOrderScreen = (props) => {
                   Place Order
                 </button>
               </li>
+              {loading && <LoadingBox />}
+              {error && <MessageBox variant='danger'>{error}</MessageBox>}
             </ul>
           </div>
         </div>
