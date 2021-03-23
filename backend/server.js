@@ -23,6 +23,10 @@ app.use('/api/products', productRouter)
 
 app.use('/api/orders', orderRouter)
 
+app.get('/api/config/paypal', (req, res) => {
+  res.send(process.env.PAYAPL_CLIENT_ID || 'paypal')
+})
+
 app.get('/', (req, res) => res.send('Server is Running'))
 
 app.use((err, req, res, next) => {
